@@ -1,0 +1,7 @@
+/.DS_Store
+/.vscode
+/CMakeCache.txt
+/CMakeFiles
+/Makefile
+/build
+/cmake_install.cmake
