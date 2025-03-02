@@ -66,7 +66,71 @@ FirstPractice::FirstPractice(QWidget *parent, QWidget *_mainWindow) : QWidget(pa
     splitBottomLine->setFrameShadow(QFrame::Sunken); // Устанавливаем тень
 
 
+    /*QHBoxLayout* firstRow = new QHBoxLayout();
+    
+    QLabel* buttomM_CO = new QLabel ("M<sub>CO</sub>= ");
+    QLabel* buttomM_PM10 = new QLabel ("M<sub>PM<sup>10</sup></sub>= " );
+    QLabel* bestResult = new QLabel ("Лучший результат: ");
+    QLabel* buttomButtonUpp = new QLabel (" ");
 
+    firstRow->addWidget(buttomM_CO);
+    firstRow->addWidget(buttomM_PM10);
+    firstRow->addWidget(bestResult);
+    firstRow->addWidget(buttomButtonUpp);
+
+    QHBoxLayout* secondRow = new QHBoxLayout();
+    
+    QLabel* buttomM_NO2 = new QLabel ("M<sub>NO<sup>2</sup></sub>= " );
+    QLabel* buttomM_SO2 = new QLabel ("M<sub>SO<sup>2</sup></sub>= ");
+    QLabel* numberOfAttempts = new QLabel ("Количество попыток: ");
+    QLabel* buttomButtonMiddle = new QLabel (" ");
+
+    secondRow->addWidget(buttomM_NO2);
+    secondRow->addWidget(buttomM_SO2);
+    secondRow->addWidget(numberOfAttempts);
+    secondRow->addWidget(buttomButtonMiddle);
+
+
+    QHBoxLayout* thirdRow = new QHBoxLayout();
+    
+    QLabel* buttomM_PM2_5 = new QLabel ("M<sub>PM<sup>2.5</sup></sub>= " );
+    QLabel* buttomM_O3 = new QLabel ("M<sub>O<sup>3</sup></sub>= ");
+    QLabel* nothing = new QLabel (" ");
+    QLabel* buttomButtonButton = new QLabel (" ");
+
+    thirdRow->addWidget(buttomM_PM2_5);
+    thirdRow->addWidget(buttomM_O3);
+    thirdRow->addWidget(numberOfAttempts);
+    thirdRow->addWidget(buttomButtonButton);*/
+
+    QHBoxLayout* hbox = new QHBoxLayout();
+
+    QVBoxLayout* firstColumn = new QVBoxLayout();
+
+    QHBoxLayout* M_CO2_combo = new QHBoxLayout();
+
+    QLabel* buttomM_CO = new QLabel ("M<sub>CO</sub>= ");
+    QLineEdit *inputM_CO2 = new QLineEdit();
+    M_CO2_combo->addWidget(buttomM_CO);
+    M_CO2_combo->addWidget(inputM_CO2);
+    firstColumn->addLayout(M_CO2_combo);
+
+    QHBoxLayout* M_NO2_combo = new QHBoxLayout();
+    QLabel* buttomM_NO2 = new QLabel ("M<sub>NO<sup>2</sup></sub>= " );
+    QLineEdit *inputM_NO2 = new QLineEdit();
+    M_NO2_combo->addWidget(buttomM_NO2);
+    M_NO2_combo->addWidget(inputM_NO2);
+    firstColumn->addLayout(M_NO2_combo);
+
+    QHBoxLayout* M_PM2_5_combo = new QHBoxLayout();
+    QLabel* buttomM_PM2_5 = new QLabel ("M<sub>PM<sup>2.5</sup></sub>= " );
+    QLineEdit *inputM_PM2_5 = new QLineEdit();
+    M_PM2_5_combo->addWidget(buttomM_PM2_5);
+    M_PM2_5_combo->addWidget(inputM_PM2_5);
+    firstColumn->addLayout(M_PM2_5_combo);
+
+    hbox->addLayout(firstColumn);
+    
 
     // Создание компоновки
     QVBoxLayout *mainLayout = new QVBoxLayout();
@@ -85,6 +149,7 @@ FirstPractice::FirstPractice(QWidget *parent, QWidget *_mainWindow) : QWidget(pa
     mainLayout->addWidget(averageSpeed);
     mainLayout->addWidget(autoCount);
     mainLayout->addWidget(splitBottomLine);
+    mainLayout->addLayout(hbox);
     
 
     // Установка компоновки для виджета
